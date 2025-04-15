@@ -15,8 +15,9 @@ public class WebConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
                         .allowedOrigins("https://todolist-7pqi.onrender.com") // Your frontend URL
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")  // Allowed HTTP methods
-                        .allowedHeaders("*");  // Allow all headers
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allow OPTIONS method
+                        .allowedHeaders("*") // Allow all headers
+                        .allowCredentials(true); // Optional, if you're using credentials (cookies, authorization)
             }
         };
     }
